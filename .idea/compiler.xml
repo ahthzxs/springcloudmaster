@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springcloud-api" />
         <module name="springcloud-eureka" />
+        <module name="springcloud-gateway" />
         <module name="springclouduser" />
       </profile>
     </annotationProcessing>
@@ -24,6 +25,7 @@
       <module name="springcloud-api" options="-parameters" />
       <module name="springcloud-common" options="-parameters" />
       <module name="springcloud-eureka" options="-parameters" />
+      <module name="springcloud-gateway" options="-parameters" />
       <module name="springcloud-web" options="-parameters" />
       <module name="springclouddemo" options="-parameters" />
       <module name="springcloudmaster" options="-parameters" />

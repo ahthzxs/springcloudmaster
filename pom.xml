@@ -13,6 +13,7 @@
     <modules>
         <module>springcloud-common</module>
         <module>springcloud-eureka</module>
+        <module>springcloud-gateway</module>
         <module>springcloud-api</module>
         <module>springcloud-user</module>
     </modules>
