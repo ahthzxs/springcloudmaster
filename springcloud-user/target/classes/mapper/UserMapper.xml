@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zxs.mine.infra.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.zxs.mine.domain.User">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="code" jdbcType="VARCHAR" property="code" />
+        <result column="passwd" jdbcType="VARCHAR" property="passwd" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="sex" jdbcType="VARCHAR" property="sex" />
+        <result column="home_address" jdbcType="VARCHAR" property="homeAddress" />
+        <result column="current_residence" jdbcType="VARCHAR" property="currentResidence" />
+        <result column="monthly_salary" jdbcType="DECIMAL" property="monthlySalary" />
+        <result column="work" jdbcType="VARCHAR" property="work" />
+        <result column="mobile1" jdbcType="VARCHAR" property="mobile1" />
+        <result column="mobile2" jdbcType="VARCHAR" property="mobile2" />
+        <result column="mobile3" jdbcType="VARCHAR" property="mobile3" />
+        <result column="tel_home" jdbcType="VARCHAR" property="telHome" />
+        <result column="tel_work" jdbcType="VARCHAR" property="telWork" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="birthday" jdbcType="DATE" property="birthday" />
+        <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+        <result column="height" jdbcType="DOUBLE" property="height" />
+        <result column="weight" jdbcType="DOUBLE" property="weight" />
+        <result column="education" jdbcType="VARCHAR" property="education" />
+        <result column="graduated_school" jdbcType="VARCHAR" property="graduatedSchool" />
+        <result column="qq" jdbcType="VARCHAR" property="qq" />
+        <result column="wechat" jdbcType="VARCHAR" property="wechat" />
+        <result column="hobby" jdbcType="VARCHAR" property="hobby" />
+        <result column="relationship" jdbcType="VARCHAR" property="relationship" />
+        <result column="ext1" jdbcType="VARCHAR" property="ext1" />
+        <result column="ext2" jdbcType="VARCHAR" property="ext2" />
+        <result column="ext3" jdbcType="VARCHAR" property="ext3" />
+        <result column="input_man" jdbcType="VARCHAR" property="inputMan" />
+        <result column="input_time" jdbcType="DATE" property="inputTime" />
+        <result column="update_time" jdbcType="DATE" property="updateTime" />
+    </resultMap>
+
+    <select id="selectByLoginName2" resultType="com.zxs.mine.domain.User">
+        select * from user where login_name = #{login_name}
+    </select>
+
+    <select id="findById" resultType="com.zxs.mine.domain.User">
+        select * from user where id = #{id}
+    </select>
+
+    <select id="selectByIds" resultType="com.zxs.mine.domain.User" parameterType="java.util.List">
+        select
+               *
+        from
+             user
+        where
+              id in
+            <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+    </select>
+
+
+
+        </mapper>
